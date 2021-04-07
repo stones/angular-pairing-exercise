@@ -1,0 +1,39 @@
+/* You can add global styles to this file, and also import other style files */
+@import "normalize.css";
+
+@font-face {
+  font-family: Circular;
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: local("Circular-Book"), local("Circular"),
+    url(https://static.ratemyagent.com.au/fonts/circular/lineto-circular-book.eot),
+    url(https://static.ratemyagent.com.au/fonts/circular/lineto-circular-book.eot#iefix) format("embedded-opentype"),
+    url(https://static.ratemyagent.com.au/fonts/circular/lineto-circular-book.woff2) format("woff2"),
+    url(https://static.ratemyagent.com.au/fonts/circular/lineto-circular-book.woff) format("woff");
+}
+@font-face {
+  font-family: Circular;
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: local("Circular-Medium"), local("Circular"),
+    url(https://static.ratemyagent.com.au/fonts/circular/lineto-circular-medium.eot),
+    url(https://static.ratemyagent.com.au/fonts/circular/lineto-circular-medium.eot#iefix) format("embedded-opentype"),
+    url(https://static.ratemyagent.com.au/fonts/circular/lineto-circular-medium.woff2) format("woff2"),
+    url(https://static.ratemyagent.com.au/fonts/circular/lineto-circular-medium.woff) format("woff");
+}
+@font-face {
+  font-family: Circular;
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: local("Circular-Bold"), local("Circular"),
+    url(https://static.ratemyagent.com.au/fonts/circular/lineto-circular-bold.eot),
+    url(https://static.ratemyagent.com.au/fonts/circular/lineto-circular-bold.eot#iefix) format("embedded-opentype"),
+    url(https://static.ratemyagent.com.au/fonts/circular/lineto-circular-bold.woff2) format("woff2"),
+    url(https://static.ratemyagent.com.au/fonts/circular/lineto-circular-bold.woff) format("woff");
+}
+body {
+  font-family: Circular, Arial, Helvetica, sans-serif;
+}
