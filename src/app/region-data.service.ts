@@ -4,7 +4,7 @@ import { of } from "rxjs";
 @Injectable({providedIn: 'root'})
 export class RegionDataService{
 
-  getRegionIdByName( regionName: string) {
+  getRegionIdByName( _regionName: string) {
     return of('melbourne-axf')
   }
 }
