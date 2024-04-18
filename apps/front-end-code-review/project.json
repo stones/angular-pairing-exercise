@@ -1,0 +1,105 @@
+{
+  "name": "front-end-code-review",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "generators": {
+    "@schematics/angular:component": {
+      "style": "scss"
+    }
+  },
+  "sourceRoot": "apps/front-end-code-review/src",
+  "prefix": "app",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "options": {
+        "outputPath": "dist/apps/front-end-code-review",
+        "index": "apps/front-end-code-review/src/index.html",
+        "main": "apps/front-end-code-review/src/main.ts",
+        "polyfills": "apps/front-end-code-review/src/polyfills.ts",
+        "tsConfig": "apps/front-end-code-review/tsconfig.app.json",
+        "aot": true,
+        "assets": [
+          "apps/front-end-code-review/src/favicon.ico",
+          "apps/front-end-code-review/src/assets"
+        ],
+        "styles": ["apps/front-end-code-review/src/styles.scss"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/front-end-code-review/src/environments/environment.ts",
+              "with": "apps/front-end-code-review/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false,
+          "buildOptimizer": true,
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "2mb",
+              "maximumError": "5mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "6kb",
+              "maximumError": "10kb"
+            }
+          ]
+        },
+        "dev": {
+          "optimization": false,
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": false,
+          "vendorChunk": false,
+          "buildOptimizer": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "defaultConfiguration": "dev",
+      "options": {
+        "port": 8545,
+        "buildTarget": "front-end-code-review:build"
+      },
+      "configurations": {
+        "dev": {
+          "buildTarget": "front-end-code-review:build:dev"
+        },
+        "production": {
+          "buildTarget": "front-end-code-review:build:production"
+        }
+      }
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "front-end-code-review:build"
+      }
+    },
+    "test": {
+      "executor": "@angular-devkit/build-angular:karma",
+      "options": {
+        "main": "apps/front-end-code-review/src/test.ts",
+        "polyfills": "apps/front-end-code-review/src/polyfills.ts",
+        "tsConfig": "apps/front-end-code-review/tsconfig.spec.json",
+        "karmaConfig": "apps/front-end-code-review/karma.conf.js",
+        "assets": [
+          "apps/front-end-code-review/src/favicon.ico",
+          "apps/front-end-code-review/src/assets"
+        ],
+        "styles": ["apps/front-end-code-review/src/styles.scss"],
+        "scripts": []
+      }
+    }
+  }
+}
