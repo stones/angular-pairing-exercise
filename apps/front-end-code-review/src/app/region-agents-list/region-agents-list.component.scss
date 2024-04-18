@@ -1,0 +1,74 @@
+.region-agents-list {
+  width: 1000px;
+  margin: 0 auto;
+  padding: 20px 0;
+
+  table {
+    border-spacing: 0;
+    width: 100%;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  td.grey {
+    background: #a2a7aa;
+  }
+
+  td.avatar {
+    position: relative;
+    width: 90px;
+    text-align: center;
+    padding: 20px 10px;
+
+    .avatar-image {
+      height: 90px;
+    }
+    .trophy {
+      position: absolute;
+      top: 60px;
+      right: 10px;
+      height: 30px;
+    }
+    .star-rating {
+      position: relative;
+      display: block;
+      text-align: center;
+      border-radius: 10px;
+      color: white;
+      width: 50px;
+      margin: -15px auto 0;
+      background-color: #65768a;
+      z-index: 100;
+    }
+  }
+
+  td.name {
+    padding-left: 40px small {
+      color: #9ca0a3;
+    }
+  }
+
+  td.reviews,
+  td.properties,
+  td.sale-price {
+    width: 150px;
+    text-align: center;
+    div {
+      font-weight: bold;
+      font-size: 20px;
+    }
+  }
+
+  td.actions {
+    width: 120px;
+    padding: 20px;
+    .btn {
+      background: #0375e5;
+      display: block;
+      color: white;
+      text-align: center;
+      border-radius: 2px;
+      padding: 5px 0;
+    }
+  }
+}

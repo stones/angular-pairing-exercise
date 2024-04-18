@@ -1,0 +1,53 @@
+<div class="region-agents-list" *ngIf="region">
+  <table *ngFor="let agent of this.agents.Results">
+    <tr>
+      <td colspan="6" class="grey">&nbsp;</td>
+    </tr>
+    <tr class="agent-details">
+      <td class="avatar">
+        <img src="assets/avatar.png" class="avatar-image" />
+
+        <div *ngIf="agent.StarRating >= 2" class="star-rating">
+          ★ {{ agent.StarRating }}
+        </div>
+
+        <img
+          *ngIf="agent.IsAwardWinner"
+          src="assets/awards-badge.svg"
+          class="trophy"
+        />
+      </td>
+      <td class="name">
+        <b>{{ agent.Name }}</b> <br />
+        <small>{{ agent.Agency.Name }}</small>
+      </td>
+      <td class="reviews">
+        <img src="assets/chat.png" />
+        <div>{{ agent.TotalReviews }}</div>
+        <small>Reviews<br /><br /></small>
+      </td>
+      <td class="properties">
+        <img src="assets/gavel.png" />
+        <div>{{ agent.SoldProperties }}</div>
+        <small
+          >Sold properties in <b>{{ region | titlecase }}</b></small
+        >
+      </td>
+      <td class="sale-price">
+        <img src="assets/money.png" />
+        <div>${{ this.getShortAmount(agent.AverageSalePrice, 0) }}</div>
+        <small
+          >Average sale price properties in
+          <b>{{ region | titlecase }}</b></small
+        >
+      </td>
+      <td class="actions">
+        <a (click)="contactAgent(agent.Name)" class="btn">Get in touch</a>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<div class="region-agents-list-no-region" *ngIf="!region">
+  Please enter a region
+</div>
